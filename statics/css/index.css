@@ -1,0 +1,189 @@
+/* @media (min-height: 320px) { */
+    .ui.footer { /* Increased specificity for SO snippet priority */
+      /* position: absolute;
+      bottom: 0; */
+      width: 100%;
+      height: 12%;
+      /* background-color: rgba(149, 201, 231, 0.822);
+      background: linear-gradient(to right, red , yellow); */
+    }
+  
+    #content{
+      overflow: auto;
+      height: 88%;
+      background-color:whitesmoke;
+      /* background: linear-gradient(to right, rgb(153, 40, 134) , rgb(142, 109, 145)); */
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100% !important;
+    }
+
+/* 聊天信息 */
+.rotWord, .mWord {
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.rotWord span {
+    background: url("../img/doctor3.png");
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    float: left;
+}
+
+.rotWord p {
+    word-break: break-all;
+    top: 4px;
+    float: left;
+    color: rgb(32, 26, 31);
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px;
+    line-height: 24px;
+    background: white;
+    border-radius: 6px;
+    max-width: 240px;
+}
+
+.mWord span {
+    background: url("../img/user.png");
+    height: 40px;
+    width: 40px;
+    float: right;
+    margin-right: 5px;
+}
+
+
+.mWord p {
+    word-break: break-all;
+    top: 2px;
+    float: right;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 10px;
+    line-height: 24px;
+    background: #1b1268;
+    border-radius: 6px;
+    max-width: 260px;
+}
+
+#f-input{
+    width: 65%;
+    height: 30%;
+}
+
+#f-left {
+    font-size: 15px;
+    /* border: none; */
+    /* border-radius: 5px; */
+    background: white;
+    width: 100%;
+}
+
+.info{
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 10px;
+}
+
+#footer-container{
+    padding-left: 5%;
+}
+
+#input{
+     /* position: absolute;
+    bottom: 0;  */
+    width: 100%;
+    
+    /* border-radius: 30px  */
+}
+
+/* #example-content{
+    overflow: auto;
+} */
+
+#footer{
+    /* text-align: center; */
+    /* align-items: center; */
+    /* background: linear-gradient(to right, rgb(153, 40, 134) , rgb(142, 109, 145)); */
+    background-color: whitesmoke;
+    padding-top: 2%;
+}
+
+
+#btn{
+    background: #1b1268;
+    color: white;
+    margin-left: 8%;
+    /* width:20%;
+    height: 30%; */
+}
+
+.a-text{
+    color: #1b1268;
+}
+
+/* 加载动画 */
+
+.typing_loader{
+   background-color: black;
+}
+
+@-webkit-keyframes typing{
+    0%{
+        background-color: rgba(17, 11, 11, 1);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+      }
+    25%{
+        background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+    }
+    75%{ background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,1);
+      }
+}
+
+@-moz-keyframes typing{
+   0%{
+        background-color: rgba(17, 11, 11, 1);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+      }
+    25%{
+        background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+    }
+    75%{ background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,1);
+      }
+}
+
+@keyframes typing{
+   0%{
+        background-color: rgba(17, 11, 11, 1);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+      }
+    25%{
+        background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,2),
+                    24px 0px 0px 0px rgba(17,11,11,0.2);
+    }
+    75%{ background-color: rgba(17, 11, 11, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(17,11,11,0.2),
+                    24px 0px 0px 0px rgba(17,11,11,1);
+      }
+}

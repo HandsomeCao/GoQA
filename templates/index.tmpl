@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/statics/css/semantic.min.css">
+  <link rel="stylesheet" href="/statics/css/icon.min.css">
+  <link rel="stylesheet" href="/statics/css/loaderskit.css">
+  <link rel="stylesheet" href="/statics/css/index.css">
+
+  <title>新冠肺炎通</title>
+</head>
+
+<body>
+  <div class="ui container" id="content">
+    <!-- 聊天内容 -->
+    <div class="b-body">
+      <div class="rotWord">
+        <div class="time" style="text-align: center;">
+          <strong style="color: #aeacb3;">{{.time}}</strong>
+
+        </div>
+        <br>
+        <span></span>
+        <p>您好，这里是小迦医生，您可以问我与新冠肺炎相关的中文问题，或者点击问号了解如何进行提问。
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical footer" id="footer">
+
+    <div class="info">
+      <strong style="color: gray;">成都迭迦科技有限公司&copy;</strong>
+      <a href="javascript:void(0);" onclick="$('#mianze').modal('show');"
+        style="text-decoration: underline;color: #59488b">免责声明</a>
+      <!-- 版权分割线 -->
+    </div>
+
+  
+    <div class="ui container" id="footer-container">
+
+      <div class="ui medium left icon input" id="f-input">
+        <input type="text" placeholder="请输入问题" id="f-left">
+        <i class="question medium icon" style="color: #59488b;" href="javascript:void(0);"
+        id="help-icon" data-variation="huge"></i> 
+
+      </div>
+      <div class="ui custom popup">
+      <div class="header" style="color: #59488b; text-align: center;">
+          示例问题
+        </div>
+        <div class="ui divider"></div>
+        <div class="content" id="example_content">
+          <!-- 这里读取js中数据 -->
+        </div>
+      </div>
+      <!-- <div class="ui custom popup">
+        示例问题
+      </div> -->
+      <div class="ui purple medium button" id="btn">发送</div>
+    </div>
+</div>
+</body>
+
+<!-- 免责声明 -->
+<div class="ui modal" id="mianze">
+  <div class="header" style="color:#59488b;">
+    免责声明
+  </div>
+  <div class="content">
+    <h5>请在同意以下声明后使用本系统。</h5>
+    <p>
+      <small>1.凡是在本系统出现的信息，均仅供参考。本系统将尽力确保所提供的信息的准确性及可靠性，但不保证有关资料的准确性和可靠性，注册用户和一般页面浏览者在使用前请进一步核实，并对任何自主决定对行为负责，承担相应对风险。<br />
+        2.任何单位或个人认为本系统对网页或链接内容可能涉嫌侵犯其知识产权，应该及时向本系统提出书面权利通知，并提供身份证明、权属证明及详细侵权情况证明。本系统在收到上述法律文件后，将会依法尽快删除相关内容或断开相关链接并承担相关责任。<br />
+        3.本系统将通过技术手段、强化内部管理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事先得到用户明确授权等原因外，保证不对外公开或向第三方透露用户个人隐私信息。<br />
+        4.本系统不保证网络服务一定满足客户要求，也不保证网络服务不会中断，对网络对及时性、安全性、准确性也都不作保证。<br />
+        5.本系统所提供的服务所涉及的相关回答仅供参考，不作为准确的医学临床判断，不能代替医嘱，请用户自行判断是否就医。<br />
+        6.用户直接或通过各类方式间接使用本系统的服务和数据的行为都将被视作已无条件接受本协议的全部内容；若用户对本协议对任何条款存在任何异议，请停止使用本系统提供的全部服务。</small>
+    </p>
+  </div>
+  <div class="actions">
+    <div class="ui purple button">
+      同意
+    </div>
+  </div>
+</div>
+
+<!-- 示例问题 -->
+<div class="ui modal" id="example">
+  <i class="close icon"></i>
+  <div class="header" style="color: #59488b;">
+    示例问题
+  </div>
+  <div class="content" id="example_content">
+    <!-- 这里读取js中数据 -->
+  </div>
+  <div class="actions">
+    <div class="ui purple button">
+      关闭
+    </div>
+  </div>
+
+</div>
+
+<script src="/statics/js/jquery.min.js"></script>
+<script src="/statics/js/semantic.min.js"></script>
+<script src="/statics/js/index.js"></script>
+
+</html>
