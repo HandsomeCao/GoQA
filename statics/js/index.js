@@ -27,6 +27,7 @@ function action() {
 			var my_data = $.parseJSON(redata)
 
 			var array = [my_data.data];
+			var recommand = my_data.recommand
 
 			//if (my_data.data.info.hasOwnProperty("heuristic")) {
 			//	for (var i = 0; i < my_data.data.info.heuristic.length; i++) {
@@ -39,14 +40,35 @@ function action() {
 				//console.log(array[i]);
 				var result = array[i];
 				var p_id = "p_" + msg_num.toString();
-				$(".b-body").append("<div class='rotWord'><span></span> <p id='{0}'>".format(p_id) + result + "</p></div>");
+				//$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'> <p id='{0}'>".format(p_id) + result + "</p></div></div>");
+				$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'>" + result + "</div></div>");
 
-				foldText('p#{0}'.format(p_id), 200);
+				// 推荐问题
+				$(".b-body").append(
+					"<div class='rotWord'>\
+					<br>\
+					<span></span>\
+					<div class='rotWord_P'>\
+					  您可以这样问我：\
+					  <br>\
+					  <div class='ui purple inverted segment recommand'>\
+							{0}\
+					  </div>\
+					  <div class='ui purple inverted segment recommand'>\
+						{1}\
+					  </div>\
+					  <div class='ui purple inverted segment recommand'>\
+						{2}\
+					  </div>\
+					</div>\
+					</div>".format(recommand[0], recommand[1], recommand[2])
+				);
+
+				//foldText('p#{0}'.format(p_id), 200);
 				$("#content").scrollTop(10000000);
 			}
 		}
 	}
-
 	ajax(args);
 	text.val("");
 	// text.focus();
@@ -174,16 +196,16 @@ text.focus(function () {
 // 	}, 100)
 //     $("#content").scrollTop(10000000);
 // })
-$("input").blur(function(){
-    var u = navigator.userAgent;
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    // 判断是否为IOS系统
-    if(isiOS) {
-        setTimeout(() => {
-            const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
-            window.scrollTo(0, Math.max(scrollHeight - 1, 0));
-        }, 100);
-    }   
+$("input").blur(function () {
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	// 判断是否为IOS系统
+	if (isiOS) {
+		setTimeout(() => {
+			const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
+			window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+		}, 100);
+	}
 })
 
 
@@ -203,7 +225,7 @@ function readQus() {
 	}
 	for (var i = 0; i < choiced_factoid_examples.length; i++) {
 		var p = document.createElement('div');
-		p.className = 'ui purple segment'
+		p.className = 'ui purple segment example'
 		p.innerText = choiced_factoid_examples[i]['query'];
 		p.id = 'example_question'
 		$('#example_content').append(p);
@@ -211,12 +233,18 @@ function readQus() {
 	}
 }
 
-$('#example_content').on('click', ".ui.segment", function () {
+$('#example_content').on('click', ".example", function () {
 	$('#example').modal('hide');
 	text.val(this.innerText);
 	//console.log(text.val());
 	action();
 	msg_num = msg_num + 1;
 	$('.custom.popup').popup('hide');
+})
+
+$('body').on('click', ".recommand", function () {
+	text.val(this.innerText);
+	action();
+	msg_num = msg_num + 1;
 })
 

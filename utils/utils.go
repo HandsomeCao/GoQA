@@ -6,7 +6,26 @@ import (
 	"io"
 	"log"
 	"os"
+	"sort"
 )
+
+type Slice struct {
+	value []float64
+	idx   []int
+}
+
+func (s Slice) Swap(i, j int) {
+	s.value[i], s.value[j] = s.value[j], s.value[i]
+	s.idx[i], s.idx[j] = s.idx[j], s.idx[i]
+}
+
+func (s Slice) Len() int {
+	return len(s.value)
+}
+
+func (s Slice) Less(i, j int) bool {
+	return s.value[j] < s.value[i]
+}
 
 func readFile(path string) string {
 	// open file
@@ -48,20 +67,29 @@ func getKey(m map[string]interface{}) []string {
 	//先定义数组
 	j := 0
 	keys := make([]string, len(m))
-	for k, _ := range m {
+	for k := range m {
 		keys[j] = k
 		j++
 	}
 	return keys
 }
 
-func MaxIndex(score []float64) (int, float64) {
-	max, index := 0.0, 0
-	for i, v := range score {
-		if v > max {
-			max = v
-			index = i
-		}
+// MaxIndex get sort indices
+func MaxIndex(score []float64, topK int) ([]int, []float64) {
+	idx := make([]int, len(score))
+	for i:= 0; i< len(score); i++{
+		idx[i] = i
 	}
-	return index, max
+	scoreSlice := Slice{
+		value: score,
+		idx: idx,
+	}
+	sort.Sort(scoreSlice)
+	// for i, v := range score {
+	// 	if v > max {
+	// 		max = v
+	// 		index = i
+	// 	}
+	// }
+	return scoreSlice.idx[:topK], scoreSlice.value[:topK]
 }

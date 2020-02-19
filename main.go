@@ -3,11 +3,11 @@ package main
 
 import (
 	"XgfyQA/initRouter"
-	"github.com/gin-gonic/gin"
+	//	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	gin.SetMode(gin.ReleaseMode)
+	//	gin.SetMode(gin.ReleaseMode)
 	router := initRouter.SetupRouter()
 	_ = router.Run()
 }
