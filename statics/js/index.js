@@ -49,7 +49,7 @@ function action() {
 					<br>\
 					<span></span>\
 					<div class='rotWord_P'>\
-					  您可以这样问我：\
+					  您还可以这样问我：\
 					  <br>\
 					  <div class='ui purple inverted segment recommand'>\
 							{0}\

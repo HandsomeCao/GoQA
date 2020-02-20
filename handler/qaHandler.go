@@ -45,15 +45,15 @@ func QuestionHandler(context *gin.Context) {
 	time.Sleep(500 * time.Millisecond)
 	// 获取推荐问题
 	recommandString := make([]string, 3)
-	for i:=1; i< 4; i++{
+	for i := 1; i < 4; i++ {
 		question = qs[topIndexs[i]]
 		recommandString[i-1] = question
 	}
 	//返回json
 	context.JSON(http.StatusOK, gin.H{
-		"data":     answer,
-		"message":  "success",
-		"question": question,
+		"data":      answer,
+		"message":   "success",
+		"question":  question,
 		"recommand": recommandString,
 	})
 }
