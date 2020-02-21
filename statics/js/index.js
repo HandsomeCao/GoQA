@@ -32,8 +32,14 @@ function review_action(query){
 				var result = array[i];
 				//var p_id = "p_" + msg_num.toString();
 				//$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'> <p id='{0}'>".format(p_id) + result + "</p></div></div>");
+				if (review_id == 8){
+				$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'>" + result + "<br><button class='ui medium blue button is_button'>无</button></div></div>");
+				}
+				else if (review_id>=3 && review_id<=7){
+				$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'>" + result + "<br><button class='ui medium blue button is_button'>是</button><button class='ui medium blue button is_button'>否</button</div></div>");
+				}else{
 				$(".b-body").append("<div class='rotWord'><span></span> <div class='rotWord_P'>" + result + "</div></div>");
-
+				}	
 				if (review_id == 9){
 				$(".b-body").append(
 					"<div class='rotWord'>\
@@ -329,3 +335,8 @@ $('#judge').click(function(){
 	msg_num = msg_num + 1;
 })
 
+$('body').on('click', ".is_button", function () {
+	text.val(this.innerText);
+	action();
+	msg_num = msg_num + 1;
+})
