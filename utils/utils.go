@@ -77,12 +77,12 @@ func getKey(m map[string]interface{}) []string {
 // MaxIndex get sort indices
 func MaxIndex(score []float64, topK int) ([]int, []float64) {
 	idx := make([]int, len(score))
-	for i:= 0; i< len(score); i++{
+	for i := 0; i < len(score); i++ {
 		idx[i] = i
 	}
 	scoreSlice := Slice{
 		value: score,
-		idx: idx,
+		idx:   idx,
 	}
 	sort.Sort(scoreSlice)
 	// for i, v := range score {

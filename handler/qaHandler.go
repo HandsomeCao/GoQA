@@ -4,6 +4,7 @@ import (
 	"XgfyQA/utils"
 	"github.com/gin-gonic/gin"
 	"log"
+	"math/rand"
 	"net/http"
 	"time"
 )
@@ -56,4 +57,14 @@ func QuestionHandler(context *gin.Context) {
 		"question":  question,
 		"recommand": recommandString,
 	})
+}
+
+func GetRandomQuestions(num int) []string {
+	length := len(qs)
+	questions := make([]string, num)
+	for i := 0; i < num; i++ {
+		id := rand.Intn(length)
+		questions[i] = qs[id]
+	}
+	return questions
 }

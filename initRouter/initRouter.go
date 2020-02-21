@@ -24,6 +24,7 @@ func SetupRouter() *gin.Engine {
 	questionRouter := router.Group("/question")
 	{
 		questionRouter.GET("", handler.QuestionHandler)
+		questionRouter.GET("/review", handler.ReviewHandler)
 	}
 	return router
 }

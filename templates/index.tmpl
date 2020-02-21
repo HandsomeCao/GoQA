@@ -24,7 +24,7 @@
         </div>
         <br>
         <span></span>
-        <div class="rotWord_P">您好，您可以问我与新冠肺炎相关的问题，或者点击问号了解如何进行提问。
+		<div class="rotWord_P">您好，您可以问我与新冠肺炎相关的问题，或者说<a id="judge" href="#">病情自测</a>进行自我判断。
         </div>
       </div>
 
@@ -35,15 +35,11 @@
         <div class="rotWord_P" >
           您还可以这样问我：
           <br>
-          <div class="ui purple inverted segment recommand">
-            什么是新冠肺炎？
+		  {{ range .questions }}
+          <div class="ui blue segment recommand">
+			  {{.}}
           </div>
-          <div class="ui purple inverted segment recommand">
-            口罩多久一换？
-          </div>
-          <div class="ui purple inverted segment recommand">
-            与普通感冒有何不同？
-          </div>
+			{{ end }}
         </div>
         </div>
       </div>
@@ -56,7 +52,7 @@
     <div class="info">
       <strong style="color: gray;">成都迭迦科技有限公司&copy;</strong>
       <a href="javascript:void(0);" onclick="$('#mianze').modal('show');"
-        style="text-decoration: underline;color: #59488b">免责声明</a>
+        style="text-decoration: underline;color: #3b83c0">免责声明</a>
       <!-- 版权分割线 -->
     </div>
 
@@ -65,12 +61,12 @@
 
       <div class="ui medium left icon input" id="f-input">
         <input type="text" placeholder="请输入问题" id="f-left">
-        <i class="question medium icon" style="color: #59488b;" href="javascript:void(0);" id="help-icon"
+        <i class="question medium icon" style="color: #3b83c0;" href="javascript:void(0);" id="help-icon"
           data-variation="huge"></i>
 
       </div>
       <div class="ui custom popup">
-        <div class="header" style="color: #59488b; text-align: center;">
+        <div class="header" style="color: #3b83c0; text-align: center;">
           示例问题
         </div>
         <div class="ui divider"></div>
@@ -81,14 +77,14 @@
       <!-- <div class="ui custom popup">
         示例问题
       </div> -->
-      <div class="ui purple medium button" id="btn">发送</div>
+      <div class="ui blue medium button" id="btn">发送</div>
     </div>
   </div>
 </body>
 
 <!-- 免责声明 -->
 <div class="ui modal" id="mianze">
-  <div class="header" style="color:#59488b;">
+  <div class="header" style="color:#3b83c0;">
     免责声明
   </div>
   <div class="content">
@@ -103,7 +99,7 @@
     </p>
   </div>
   <div class="actions">
-    <div class="ui purple button">
+    <div class="ui blue button">
       同意
     </div>
   </div>
@@ -112,14 +108,14 @@
 <!-- 示例问题 -->
 <div class="ui modal" id="example">
   <i class="close icon"></i>
-  <div class="header" style="color: #59488b;">
+  <div class="header" style="color: #3b83c0;">
     示例问题
   </div>
   <div class="content" id="example_content">
     <!-- 这里读取js中数据 -->
   </div>
   <div class="actions">
-    <div class="ui purple button">
+    <div class="ui blue button">
       关闭
     </div>
   </div>
