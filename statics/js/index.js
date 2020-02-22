@@ -16,7 +16,7 @@ function review_action(query){
 
 	var args = {
 		type: "get",
-		url: "http://localhost:8080/question/review?question=" + query + "&id=review" +review_id.toString(),
+		url: "http://xgfy.machineilab.org/question/review?question=" + query + "&id=review" +review_id.toString(),
 		//data: { "appid": "xiaosi", "spoken": text.val() },
 		success: function (redata) {
 			var my_data = $.parseJSON(redata)
@@ -102,7 +102,7 @@ function action() {
 
 	var args = {
 		type: "get",
-		url: "http://localhost:8080/question?question=" + text.val().trim(),
+		url: "http://xgfy.machineilab.org/question?question=" + text.val().trim(),
 		//data: { "appid": "xiaosi", "spoken": text.val() },
 		success: function (redata) {
 			var my_data = $.parseJSON(redata)
