@@ -63,7 +63,7 @@ function review_action(query){
 					is_review = false;
 				}
 				//foldText('p#{0}'.format(p_id), 200);
-				$("#content").scrollTop(10000000);
+				$("#content").scrollTop(200);
 
 				// 若出最终结果则 推荐问题
 			}
